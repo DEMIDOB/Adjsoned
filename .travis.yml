@@ -2,6 +2,11 @@ language: python
 python:
   - 3.6
 
+env:
+  global:
+    # See https://git.io/vdao3 for details.
+    - JOBS=1
+
 # update pip
 before_install:
   - python --version
