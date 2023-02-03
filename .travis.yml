@@ -1,0 +1,21 @@
+language: python
+python:
+  - 3.6
+
+# update pip
+before_install:
+  - python --version
+  - pip install -U pip
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python -m unittest tests/file_json_properties_tests.py
+
+deploy:
+  provider: pypi
+  username: "__token__"
+  password: "$PYPI_ADJSONED_TOKEN"
+  on:
+    branch: "master"
