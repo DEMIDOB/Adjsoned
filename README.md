@@ -36,7 +36,7 @@ for section in properties.project_settings.ignored_sections:
 print(properties.messages[1].title)  # prints: 'Hello again.'
 ```
 
-The loaded JSON file:
+The JSON file used in this example:
 ```json
 {
   "debugMode": true,
