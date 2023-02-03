@@ -11,7 +11,7 @@ with open(os.path.join(HERE, "README.md"), encoding="utf-8") as file:
 
 setup(
     name="adjsoned",
-    version="0.0.2",
+    version="0.0.3",
     description="Loads required properties/config from a json file to a Python runtime object",
     long_description=long_description,
     long_description_content_type="text/markdown",
