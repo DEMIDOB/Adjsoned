@@ -1,1 +1,2 @@
-[ ] make JsonProperties subscriptable
+[X] make JsonProperties subscriptable
+[X] implement __contains__ method

@@ -65,7 +65,26 @@ class JsonProperties:
 
         if clear_raw_data:
             self._loaded_json_data = {}
+    def __contains__(self, item):
+        if self._pythonify_entry_keys:
+            item = _text_processing.pythonify_name(item)
+
+        return item in self.__dict__
+
+    def __getitem__(self, item):
+        if self._pythonify_entry_keys:
+            item = _text_processing.pythonify_name(item)
+
+        if item in self:
+            return self.__dict__[item]
+
+        return None
+
+    def __setitem__(self, key, value):
+        if self._pythonify_entry_keys:
+            key = _text_processing.pythonify_name(key)
+
+        self.__dict__[key] = value
 
     def __str__(self) -> str:
         return f"JsonProperties('{self._title}', {self._loaded_json_data})"
-
